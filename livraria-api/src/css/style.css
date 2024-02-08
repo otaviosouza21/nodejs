@@ -1,0 +1,77 @@
+body,h1,h2,p,tr,td{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    color: rgb(53, 53, 53);
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid 1px rgb(148, 148, 238);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.form h1{
+text-align: center;
+  
+}
+
+.input-control{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-control label{
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 0.7rem;
+}
+
+.input-control input{
+    border: solid 1px rgb(148, 148, 238);
+    padding: 6px;
+    border-radius: 5px;
+    outline: none;
+    background-color: rgb(235, 235, 235);
+
+}
+
+.input-control input:focus{
+    border: solid 2px  rgb(148, 148, 238);;
+    background-color: white;
+}
+
+
+button{
+    margin-top: 10px;
+    padding: 6px 10px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(0, 0, 88);;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(0, 0, 110);
+}
+
+button:focus{
+    transform: scale(.95);
+}
+
+button.deletar{
+    background-color: tomato;
+}
+button.alterar{
+    background-color: black;
+}
