@@ -1,0 +1,23 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5433,
+      "driver": "PostgreSQL",
+      "database": "Sequelize",
+      "username": "postgres",
+      "name": "Conect"
+    },
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5433,
+      "driver": "PostgreSQL",
+      "name": "sda",
+      "database": "Sequelize",
+      "username": "postgres",
+      "password": ""
+    }
+  ]
+}

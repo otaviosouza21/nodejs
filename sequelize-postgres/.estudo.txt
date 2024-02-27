@@ -1,0 +1,39 @@
+arquivos que começam com . são arquivos ocultos // arquivo .sequelizerc é utilizado pois a estrutura do projeto está dentro de SRC, por isso é necessario que seja encontrado estes arquivos pois nao estoa na raiz, para cada pasta
+
+
+Passo 1º 
+Instalar dependencias para o projeto: npm install sequelize sequelize-cli
+
+Passo 2º
+ iniciar projeto padrao Sequelize com npx sequelize-cli init
+
+ Passo 3º
+ Instalar dependencias do postgres para conexao com banco com npm install pg pg-hstore # Postgres
+
+ Passo 4º
+ dentro de config.json configurar a conexao com o banco de dados
+
+ Passo 5º
+ Criar Modelo (Entidade) atravez do cli, com seus atributos, com npx sequelize-cli model:generate --name Pessoa --attributes nome:string,email:string,cpf:string,ativo:boolean,role:string
+ Modelo é uma camada que vai fazer a representação dos dados na API, mapeia os dados para a classe Pessoa
+ Regras de negocio faz parte do modelo
+
+ Passo 6º verificar o modelo criado e verificar o nome do Modelo e o tablename
+
+ Passo 7º Fazer conexão com o banco e vinculo do Modelo, realizando a Migração atravez do comando  npx sequelize-cli db:migrate // Migração com ORM, alterações rastreaveis no banco, como se fosse um versionamento
+
+Passo 8º seed são bases de arquivos de testes para popular o banco e realizar testes, pode ser criado atravez do comando sequelize-cli seed:generate --name demo-pessoa, que criar um arquivo dentro da pasta seeders para popular o banco
+// Este arquivo é gerado com 2 metodos, aonde no primeiro parametro é o nome da tabela no banco de dados, o segundo parametro sao os dados , e o terceiro uma array vazia
+O segundo metodo é para excluir os dados que foram criado para teste do banco
+Para rodar o arquivo seed utilize o comando npx sequelize-cli db:seed:all
+
+*** Basicamente até este ponto, voce já deve ter criado 1 modelo com os atributos da tabela que será utilizado, conectado o sequelize com o banco atravez do modelo, e da configuração de config.json, criado um arquivo de seed para popular o banco de dados para teste, jogado os dados dentro deste arquivo e rodado os script, seu banco deve ter as informações do seeder de modelo ***
+ 
+ ===========================================================================================================
+ O Padrão de arquitetura MVC separa em diferentes proncessos a comunicação do Cliente => Servidor
+
+**SOLICITAÇÃO**
+ CLIENTE ===> VIEW[ROTA] ====> CONTROLLER[CONTROLLER] ===> MODEL[MODEL] ===> MODEL[BANCO]
+
+**RETORNO**
+ MODELO[MODEL] ===> CONTROLLER[CONTROLLER] ===> VIEW[VIEW] ===> CLIENTE

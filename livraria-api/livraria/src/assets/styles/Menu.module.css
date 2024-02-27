@@ -1,0 +1,18 @@
+.menu{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 20px;
+  background: rgba(73, 73, 73, 0.219); /* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
+  backdrop-filter: blur(145px); /* Ajuste o valor de desfoque conforme necessário */
+  border: 1px solid rgba(184, 163, 163, 0.137); /* Borda para realçar o efeito de vidro */
+  padding: 50px;
+  margin: 0 auto; /* Ajuste conforme necessário */
+  border-radius: 80px;
+}
+
+.menu h1{
+  font-size: 2rem;
+  color: #b6b6b6;
+}
