@@ -7,7 +7,7 @@ class Controller {
     try {
       // acessa o modelo (models/index.js que indexa todos os modelos criados)
       const listaDeRegistro = await this.entidadeService.pegaTodosOsRegistros(); // acessa os metodos do sequelize do modelo Pessoa
-      return res.status(200).json(listaDeRegistro); // da a resposta na api status 200  e um json com a resposta de lista
+      return res.status(200).json({mensagem: 'Todos os Registros',listaDeRegistro}); // da a resposta na api status 200  e um json com a resposta de lista
     } catch {}
   }
 
@@ -32,7 +32,7 @@ class Controller {
         .status(200)
         .json({ mensagem: 'Registro Criado', novoRegistroCriado });
     } catch {
-      //erro
+      return res.status(400).json({mensagem:'Registro não criado'})
     }
   }
 
